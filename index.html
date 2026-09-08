@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CMOS Inverter: Why CMOS Became the Foundation of Modern Digital ICs">
+  <title>CMOS Inverter | TechThoughts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+  <a class="brand" href="#">
+    <span class="chip">▦</span>
+    <span><strong>TechThoughts</strong><small>Ideas · Electronics · Innovation</small></span>
+  </a>
+  <nav>
+    <a href="#top">Home</a>
+    <a class="active" href="#article">Blogs</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="search"><span>⌕</span><input id="searchInput" placeholder="Search articles..."></div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="tag">ELECTRONICS</span>
+    <h1><span>CMOS Inverter:</span> Why CMOS Became the Foundation of Modern Digital ICs</h1>
+    <p>A simple idea. Two transistors. Billions of possibilities. Here's why the CMOS inverter changed everything.</p>
+    <div class="meta">
+      <span>◉ Pranjal Patil</span><span>◷ Sep 6, 2026</span><span>◴ 8 min read</span>
+    </div>
+  </div>
+</section>
+
+<main class="layout" id="article">
+  <article>
+    <section>
+      <h2>Introduction</h2>
+      <p>Within the last thirty years, almost every integrated circuit one could think of — from the latest microprocessor in a mobile phone to a simple washing-machine controller or even a music-playing greeting card — has relied on fundamental building blocks repeated millions or billions of times: CMOS logic circuits.</p>
+      <p>The CMOS inverter is simple, but its impact is enormous. It helped make high-density digital electronics practical by dramatically reducing static power consumption compared with older logic families.</p>
+      <blockquote>“Two transistors. One simple idea. A foundation for modern electronics.”</blockquote>
+    </section>
+
+    <section id="preliminary">
+      <h2>1. Preliminary Remarks</h2>
+      <p>An inverter in digital electronics is a NOT gate. It inverts a signal: a high voltage, logical <b>1</b>, becomes a low voltage, logical <b>0</b>, and vice versa.</p>
+      <p>Inverters can be made using relays, vacuum tubes, bipolar transistors, NMOS logic and other technologies. The challenge was not simply making a gate work — it was making billions of gates work together efficiently inside a single integrated circuit.</p>
+    </section>
+
+    <section id="power">
+      <h2>2. What Makes CMOS Special? Power Dissipation</h2>
+      <p>Older NMOS logic could have a continuous current path from the power supply to ground in a stable logic state. When multiplied across a large IC, this unnecessary current became a serious source of heat and power consumption.</p>
+      <div class="warning">⚡ <b>The problem:</b> millions of gates with continuous current paths can turn wasted electrical energy into significant heat.</div>
+      <p>CMOS — Complementary Metal-Oxide-Semiconductor — uses complementary PMOS and NMOS transistors. In a stable state, one transistor is on while the other is off, so there is ideally no direct DC path from VDD to ground.</p>
+    </section>
+
+    <section id="works">
+      <h2>3. How the CMOS Inverter Works</h2>
+      <div class="explainer">
+        <div class="circuit-card">
+          <div class="circuit">
+            <div class="rail">VDD</div>
+            <div class="pmos">PMOS</div>
+            <div class="node">●</div>
+            <div class="nmos">NMOS</div>
+            <div class="rail">GND</div>
+            <div class="wire left">INPUT (A)</div>
+            <div class="wire right">OUTPUT (Ā)</div>
+          </div>
+          <strong>CMOS Inverter Circuit</strong>
+        </div>
+        <div class="behavior">
+          <h3>How it behaves</h3>
+          <div class="state-grid">
+            <div class="state low">
+              <h4>Input = 0 (Low)</h4>
+              <p>PMOS → ON</p><p>NMOS → OFF</p><p>Output → 1 (High)</p>
+            </div>
+            <div class="state high">
+              <h4>Input = 1 (High)</h4>
+              <p>PMOS → OFF</p><p>NMOS → ON</p><p>Output → 0 (Low)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="truth">
+        <h3>CMOS Inverter Truth Table</h3>
+        <table>
+          <tr><th>Input A</th><th>PMOS</th><th>NMOS</th><th>Output Y</th></tr>
+          <tr><td>0</td><td>ON</td><td>OFF</td><td><b>1</b></td></tr>
+          <tr><td>1</td><td>OFF</td><td>ON</td><td><b>0</b></td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section id="big-deal">
+      <h2>4. Why It Was a Big Deal</h2>
+      <p>A CMOS inverter draws very little static power in its ideal stable states. Real CMOS circuits do consume energy while switching because capacitances must be charged and discharged.</p>
+      <div class="formula">Dynamic Power ≈ α × C × V² × f</div>
+      <p>Here, switching activity, capacitance, supply voltage and frequency all influence dynamic power. This relationship became increasingly important as chips became faster and more densely packed.</p>
+    </section>
+
+    <section id="limitations">
+      <h2>5. However, It Is Not a Perfect Solution</h2>
+      <p>CMOS still has important limitations. Leakage currents become increasingly significant at very small process nodes. During transitions, both PMOS and NMOS can briefly conduct at the same time, creating short-circuit current.</p>
+      <ul class="checklist">
+        <li>Leakage power becomes important at advanced nodes.</li>
+        <li>Switching capacitance increases dynamic power.</li>
+        <li>Higher clock frequencies increase switching losses.</li>
+        <li>Short-circuit current occurs during signal transitions.</li>
+      </ul>
+      <p>Despite these challenges, CMOS remains one of the dominant technologies for digital integrated circuits.</p>
+    </section>
+
+    <section id="final">
+      <h2>6. Final Remarks</h2>
+      <p>The CMOS inverter is a great example of practical engineering: the breakthrough was not merely creating another logic gate, but arranging two complementary transistors so that the circuit could operate efficiently at enormous scale.</p>
+      <p>Next time you use a smartphone or laptop, remember that countless tiny CMOS circuits are working inside the chip to make that technology possible.</p>
+      <div class="impact">🚀 <span><b>Small circuit. Big impact.</b><br>CMOS helped turn the dream of dense, efficient digital electronics into everyday reality.</span></div>
+    </section>
+  </article>
+
+  <aside>
+    <div class="side-card toc">
+      <h3>Table of Contents</h3>
+      <a href="#preliminary">01 · Preliminary Remarks</a>
+      <a href="#power">02 · Power Dissipation</a>
+      <a href="#works">03 · How CMOS Works</a>
+      <a href="#big-deal">04 · Why It Was a Big Deal</a>
+      <a href="#limitations">05 · Limitations</a>
+      <a href="#final">06 · Final Remarks</a>
+    </div>
+
+    <div class="side-card takeaways">
+      <h3>💡 Key Takeaways</h3>
+      <p>✓ CMOS uses complementary PMOS and NMOS transistors.</p>
+      <p>✓ Stable CMOS logic ideally has almost no static power path.</p>
+      <p>✓ Switching activity is a major source of dynamic power.</p>
+      <p>✓ CMOS enabled high integration and efficient digital systems.</p>
+      <p>✓ Leakage and switching losses remain important challenges.</p>
+    </div>
+
+    <div class="side-card related">
+      <h3>Related Topics</h3>
+      <a href="#works">What is a Logic Gate?</a>
+      <a href="#power">NMOS vs CMOS Logic</a>
+      <a href="#big-deal">Dynamic Power in ICs</a>
+      <a href="#limitations">Future of Semiconductor Technology</a>
+    </div>
+
+    <div class="side-card quote-card">
+      <div>⌁</div>
+      <h3>Small circuits.<br>Big impact.</h3>
+      <p>The CMOS inverter may be simple, but it powers a smarter tomorrow.</p>
+    </div>
+  </aside>
+</main>
+
+<footer id="about">
+  <div><strong>TechThoughts</strong><p>Ideas · Electronics · Innovation</p></div>
+  <div id="contact"><p>Built as an educational electronics blog.</p><p>© 2026 TechThoughts</p></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
